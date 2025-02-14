@@ -1,5 +1,5 @@
 wandb
-fastai==2.7.12  # Use a newer version of fastai that supports torch 2.0.0
+fastai==1.0.60  # DeOldify requires fastai 1.x
 tensorboardX>=1.6
 ffmpeg
 ffmpeg-python
@@ -7,7 +7,6 @@ yt-dlp
 jupyterlab
 opencv-python>=4.2.0.32
 Pillow==11.1.0
---extra-index-url https://download.pytorch.org/whl/cu113
-torch==2.0.0
-torchvision==0.15.0
+torch==1.13.1+cpu --index-url https://download.pytorch.org/whl/cpu  # Use CPU-only version of torch 1.x
+torchvision==0.14.1+cpu --index-url https://download.pytorch.org/whl/cpu  # Use CPU-only version of torchvision 0.14.x
 ipywidgets
