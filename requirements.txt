@@ -11,11 +11,14 @@ ipywidgets
 
 # PyTorch (CPU version since Render doesn't have GPUs)
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.0.0
-torchvision==0.15.0
+torch==1.13.1+cpu
+torchvision==0.14.1+cpu
 
 # API dependencies
 flask
 gunicorn
 flask-cors
 requests
+
+# DeOldify
+git+https://github.com/jantic/DeOldify.git
