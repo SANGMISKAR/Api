@@ -19,6 +19,3 @@ flask
 gunicorn
 flask-cors
 requests
-
-# FFmpeg installation
-apt-utils
