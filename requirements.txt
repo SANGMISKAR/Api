@@ -1,5 +1,5 @@
 wandb
-fastai==1.0.60  # DeOldify requires fastai 1.x
+fastai==1.0.60
 tensorboardX>=1.6
 ffmpeg
 ffmpeg-python
@@ -7,6 +7,18 @@ yt-dlp
 jupyterlab
 opencv-python>=4.2.0.32
 Pillow==11.1.0
-torch==1.13.1+cpu --index-url https://download.pytorch.org/whl/cpu  # Use CPU-only version of torch 1.x
-torchvision==0.14.1+cpu --index-url https://download.pytorch.org/whl/cpu  # Use CPU-only version of torchvision 0.14.x
 ipywidgets
+
+# PyTorch (CPU version since Render doesn't have GPUs)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.0.0
+torchvision==0.15.0
+
+# API dependencies
+flask
+gunicorn
+flask-cors
+requests
+
+# FFmpeg installation
+apt-utils
