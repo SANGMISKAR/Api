@@ -6,6 +6,9 @@ from deoldify.visualize import get_image_colorizer
 import os
 import warnings
 
+# Import environment variables from config.py
+from config import model_path, allowed_extensions, debug_mode
+
 # Suppress warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -39,6 +42,10 @@ def colorize_image():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
+    # Check if the file extension is allowed
+    if not file.filename.lower().endswith(tuple(allowed_extensions.split(','))):
+        return jsonify({"error": f"File type not allowed. Allowed types: {allowed_extensions}"}), 400
+
     # Save the uploaded file temporarily
     input_image_path = "temp_image.jpg"
     file.save(input_image_path)
@@ -57,5 +64,5 @@ def colorize_image():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    # Enable debug mode for development
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Use debug mode from config.py
+    app.run(host='0.0.0.0', port=5000, debug=debug_mode)
