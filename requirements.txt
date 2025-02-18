@@ -19,3 +19,6 @@ flask
 gunicorn
 flask-cors
 requests
+
+# Download ColorizeArtistic_gen.pth manually
+# URL: https://github.com/SANGMISKAR/Api/releases/download/v1.0.0/ColorizeArtistic_gen.pth
